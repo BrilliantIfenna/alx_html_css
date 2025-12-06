@@ -1,0 +1,21 @@
+#what-we-do {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service {
+  width: 250px;
+  margin: 20px;
+}
+
+.service i {
+  font-size: 50px;
+  color: #ff6f61; /* example color */
+  margin-bottom: 15px;
+}

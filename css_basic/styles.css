@@ -1,0 +1,114 @@
+/* styles.css - layout using Flexbox */
+
+/* Make the whole page a flex container in column direction */
+body {
+  display: flex;
+  flex-direction: column; /* header, main, footer stacked vertically */
+  min-height: 100vh;      /* ensure body fills the viewport height */
+body {
+  background-color: #e8f0fe; /* page background color */
+  font-family: Arial, sans-serif;
+  color: #333;               /* default text color */
+}
+
+button, .btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+}
+
+/* main contains article and aside side-by-side */
+main {
+  display: flex;
+  flex-direction: row; /* article and aside in a row */
+  flex: auto;          /* allow main to grow/shrink automatically */
+  gap: 20px;           /* small gap between article and aside */
+  padding: 20px;       /* keep some internal spacing */
+  box-sizing: border-box;
+}
+
+/* article should take 2 parts out of 3 */
+article {
+  flex: 2;             /* 2/3 of available width */
+  overflow-y: auto;    /* vertical scroll when content is long */
+  min-width: 0;     
+  article {
+  background-color: #f9f9f9;  /* light gray background */
+  border: 1px solid #ddd;     /* thin border */
+  border-radius: 10px;        /* rounded corners */
+  padding: 1rem;              /* space inside */
+  margin-bottom: 1rem;        /* space below */
+}
+  /* important so flex children can shrink properly */
+
+article h2 {
+  color: #2c3e50;
+}
+
+  
+
+}
+
+/* aside should take 1 part out of 3 */
+aside {
+  flex: 1;             /* 1/3 of available width */
+  overflow-y: auto;    /* vertical scroll when content is long */
+  min-width: 0;        /* allow shrinking to avoid overflow issues */
+}
+
+/* optional: make header and footer visible and not shrink */
+header, footer {
+  flex: 0 0 auto;      /* do not grow or shrink; keep intrinsic height */
+  padding: 16px 20px;
+}
+
+/* small responsive improvement to ensure nice look on smaller screens
+   (this will be active because you added class="works_on_smartphone" on body) */
+body.works_on_smartphone main {
+  flex-direction: column; /* stack article and aside on narrow screens */
+}
+
+.logo {
+  font-size: 2rem; /* bigger size */
+  color: gold;     /* gold color */
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+@media (max-width: 600px) {
+  .columns {
+    display: block;
+  }
+}
+
+article p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

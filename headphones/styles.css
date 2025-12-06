@@ -1,0 +1,36 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+a:hover,
+a:active {
+    color: #FF6565;
+}
+
+button:hover,
+button:active {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile version styles go here */
+
+    nav ul {
+        display: none; /* Example for hamburger menu setup */
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    /* Stack columns vertically */
+    .section {
+        flex-direction: column;
+    }
+}
+
+
+

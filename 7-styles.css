@@ -1,80 +1,39 @@
-/* --- Fun continuous animations --- */
+/* --------------------------- */
+/* FUN ANIMATIONS ADDED HERE   */
+/* --------------------------- */
 
-.what-we-do .item,
-.results .item {
-    animation: floaty 4s ease-in-out infinite,
-               pulse 6s ease-in-out infinite;
-    transform-origin: center;
-}
-
-/* Gentle floating up/down */
-@keyframes floaty {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-8px); }
+/* ===== Always floating animation ===== */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
 
-/* Slow pulsing/scaling */
-@keyframes pulse {
-    0%   { transform: scale(1); opacity: 1; }
-    50%  { transform: scale(1.05); opacity: 0.9; }
-    100% { transform: scale(1); opacity: 1; }
+@keyframes subtleRotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
 }
 
-
-/* Smooth transition for hover animations */
+/* Apply to both sections */
 .what-we-do .item,
-.results .item {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    transform-origin: center;
+.our-results .item {
+    animation: floatUpDown 3s ease-in-out infinite,
+               subtleRotate 6s ease-in-out infinite;
 }
 
-/* On hover: rotate slightly, scale up, brighten */
+/* ===== Hover effects ===== */
 .what-we-do .item:hover,
-.results .item:hover {
-    transform: scale(1.08) rotate(2deg);
-    opacity: 1;
+.our-results .item:hover {
+    transform: scale(1.12) rotate(3deg);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0.9;
 }
 
-/* Bounce on hover */
-.what-we-do .item:hover {
-    animation: bounce 0.6s ease;
+/* Optional glow on hover */
+.what-we-do .item:hover img,
+.our-results .item:hover img {
+    filter: drop-shadow(0 0 10px #ff4c77);
 }
-
-.results .item:hover {
-    animation: bounce 0.6s ease;
-}
-
-@keyframes bounce {
-    0%   { transform: translateY(0) scale(1.08) rotate(2deg); }
-    30%  { transform: translateY(-10px) scale(1.1) rotate(2deg); }
-    60%  { transform: translateY(3px)  scale(1.05) rotate(2deg); }
-    100% { transform: translateY(0) scale(1.08) rotate(2deg); }
-}
-
-
-.what-we-do .item,
-.results .item {
-    opacity: 0;
-    animation: popIn 0.8s ease forwards;
-}
-
-/* Staggered effect */
-.what-we-do .item:nth-child(1),
-.results .item:nth-child(1) { animation-delay: 0.1s; }
-.what-we-do .item:nth-child(2),
-.results .item:nth-child(2) { animation-delay: 0.25s; }
-.what-we-do .item:nth-child(3),
-.results .item:nth-child(3) { animation-delay: 0.4s; }
-.what-we-do .item:nth-child(4),
-.results .item:nth-child(4) { animation-delay: 0.55s; }
-
-@keyframes popIn {
-    0%   { opacity: 0; transform: scale(0.8) translateY(20px); }
-    100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-
-
 
 
